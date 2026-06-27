@@ -11,7 +11,1111 @@
 </head>
 <body>
 
-    <!-- ضع محتوى موقعك هنا -->
+    <!<!DOCTYPE html>
+<html lang="ar" dir="rtl" class="scroll-smooth">
+<head>
+
+    <link rel="manifest" href="/manifest.json">
+<meta name="theme-color" content="#22c55e">
+
+<link href="/dist/output.css" rel="stylesheet">
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>go.com.ly | مولد روابط واتساب الاحترافي - حول رقمك لرابط مباشر</title>
+    
+    <!-- Meta Tags for PWA & Mobile Optimization -->
+    <meta name="theme-color" content="#ffffff">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="apple-mobile-web-app-title" content="go.com.ly">
+    <meta name="description" content="أفضل أداة مجانية لتحويل رقم الواتساب إلى رابط مباشر (wa.me) أو رابط احترافي قصير (go.com.ly). حسّن مبيعاتك وتسويقك عبر الواتساب الآن.">
+    <meta name="keywords" content="رابط واتساب مباشر, إنشاء رابط واتساب, تحويل الرقم لرابط, واتساب بزنس, تسويق رقمي, رابط احترافي">
+    <meta name="author" content="go.com.ly">
+
+    <!-- Favicon -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 rx=%2220%22 fill=%22%2316a34a%22/><path d=%22M30 50 L45 65 L75 35%22 stroke=%22white%22 stroke-width=%2210%22 fill=%22none%22 stroke-linecap=%22round%22 stroke-linejoin=%22round%22/></svg>">
+    
+    <!-- Fonts: Cairo & Plus Jakarta Sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS Play CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- QR Code Generator Library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrious/4.0.2/qrious.min.js"></script>
+
+    <!-- Tailwind Custom Configuration -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Cairo', 'Plus Jakarta Sans', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            50: '#f0fdf4',
+                            100: '#dcfce7',
+                            500: '#22c55e',
+                            600: '#16a34a',
+                            700: '#15803d',
+                            900: '#14532d',
+                        },
+                        pearl: {
+                            50: '#f8fafc',
+                            100: '#f1f5f9',
+                            200: '#e2e8f0',
+                            300: '#cbd5e1',
+                        }
+                    },
+                    animation: {
+                        'float-slow': 'floatSlow 8s ease-in-out infinite',
+                        'float-delayed': 'floatDelayed 10s ease-in-out infinite',
+                        'pulse-subtle': 'pulseSubtle 4s ease-in-out infinite',
+                        'gradient-shift': 'gradientShift 15s ease infinite',
+                    },
+                    keyframes: {
+                        floatSlow: {
+                            '0%, 100%': { transform: 'translateY(0px) rotate(0deg)' },
+                            '50%': { transform: 'translateY(-15px) rotate(3deg)' },
+                        },
+                        floatDelayed: {
+                            '0%, 100%': { transform: 'translateY(0px) rotate(0deg)' },
+                            '50%': { transform: 'translateY(15px) rotate(-3deg)' },
+                        },
+                        pulseSubtle: {
+                            '0%, 100%': { opacity: '0.9', transform: 'scale(1)' },
+                            '50%': { opacity: '1', transform: 'scale(1.02)' },
+                        },
+                        gradientShift: {
+                            '0%, 100%': { 'background-position': '0% 50%' },
+                            '50%': { 'background-position': '100% 50%' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Iridescent pearl backgrounds and modern glassmorphism */
+        .pearl-gradient {
+            background: linear-gradient(-45deg, #ffffff, #f1f5f9, #f5f3ff, #ecfdf5, #f0f9ff);
+            background-size: 400% 400%;
+            animation: gradient-shift 15s ease infinite;
+        }
+
+        .pearl-card {
+            background: rgba(255, 255, 255, 0.75);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.6);
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.04);
+        }
+
+        .holographic-overlay {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .holographic-overlay::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(147, 51, 234, 0.05) 0%, rgba(59, 130, 246, 0.05) 30%, rgba(16, 185, 129, 0.05) 70%, transparent 100%);
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        /* 3D Isometric Skewing */
+        .isometric-container {
+            perspective: 1200px;
+        }
+
+        .isometric-device-left {
+            transform: rotateY(25deg) rotateX(15deg) rotateZ(-5deg);
+            transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        .isometric-device-left:hover {
+            transform: rotateY(15deg) rotateX(10deg) rotateZ(-2deg) translateY(-10px);
+        }
+
+        .isometric-device-right {
+            transform: rotateY(-25deg) rotateX(15deg) rotateZ(5deg);
+            transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        .isometric-device-right:hover {
+            transform: rotateY(-15deg) rotateX(10deg) rotateZ(2deg) translateY(-10px);
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 6px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f1f5f9;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #cbd5e1;
+            border-radius: 9999px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #94a3b8;
+        }
+
+        /* Toast Container */
+        #toast-container {
+            position: fixed;
+            top: 1.5rem;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 9999;
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+            pointer-events: none;
+        }
+    </style>
+</head>
+<body class="pearl-gradient text-slate-800 antialiased selection:bg-brand-100 selection:text-brand-900 flex flex-col min-h-screen overflow-x-hidden">
+
+    <!-- Toast Notifications -->
+    <div id="toast-container" aria-live="polite"></div>
+
+    <!-- Navigation Bar -->
+    <header class="fixed w-full z-50 transition-all duration-300 bg-white/60 backdrop-blur-xl border-b border-slate-200/50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Brand Logo -->
+                <div class="flex items-center gap-3 cursor-pointer" onclick="window.location.reload()" aria-label="الصفحة الرئيسية">
+                    <div class="w-10 h-10 bg-gradient-to-br from-brand-500 to-brand-700 rounded-xl flex items-center justify-center text-white shadow-lg shadow-brand-500/20 transform hover:rotate-6 transition-transform">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" width="24" height="24">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" />
+                        </svg>
+                    </div>
+                    <div class="flex flex-col">
+                        <span class="text-2xl font-extrabold bg-clip-text text-transparent bg-gradient-to-r from-slate-900 to-slate-700 leading-none">go.com.ly</span>
+                        <span class="text-[10px] font-bold text-brand-600 tracking-wider mt-1">الروابط الذكية</span>
+                    </div>
+                </div>
+
+                <!-- Navigation Links (Desktop) -->
+                <nav class="hidden md:flex items-center gap-8 text-sm font-semibold text-slate-600" aria-label="القائمة الرئيسية">
+                    <button onclick="openModal('about-modal')" class="hover:text-brand-600 transition-colors">من نحن</button>
+                    <button onclick="openModal('privacy-modal')" class="hover:text-brand-600 transition-colors">الخصوصية</button>
+                    <button onclick="openModal('terms-modal')" class="hover:text-brand-600 transition-colors">الشروط</button>
+                </nav>
+
+                <!-- Action Button -->
+                <button onclick="openModal('pro-modal')" class="bg-slate-900 hover:bg-slate-800 text-white px-6 py-2.5 rounded-full text-sm font-bold transition-all shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 flex items-center gap-2">
+                    <span>النسخة الاحترافية</span>
+                    <span class="text-yellow-400">★</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Layout Container -->
+    <main id="main-content" class="flex-grow pt-24">
+        
+        <!-- Component 1: Hero Section with Floating Assets & Generator Form -->
+        <section class="relative py-20 lg:py-32 overflow-hidden holographic-overlay">
+            <!-- Symmetrical Floating Pearlescent Geometrics -->
+            <div class="absolute top-1/4 left-10 w-24 h-24 bg-gradient-to-tr from-purple-200 to-indigo-200 rounded-full blur-xl opacity-60 animate-float-slow pointer-events-none"></div>
+            <div class="absolute bottom-1/4 right-10 w-32 h-32 bg-gradient-to-tr from-emerald-100 to-teal-200 rounded-full blur-xl opacity-60 animate-float-delayed pointer-events-none"></div>
+
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+                <div class="text-center max-w-3xl mx-auto mb-16">
+                    <h1 class="text-4xl md:text-6xl font-black text-slate-900 leading-tight tracking-tight mb-6">
+                        سهّل وصول عملائك مع <br>
+                        <span class="text-brand-600">مولد روابط الواتساب الفائق</span>
+                    </h1>
+                    <p class="text-lg text-slate-600 leading-relaxed mb-4">
+                        حوّل أرقام التواصل الطويلة إلى روابط مخصصة فائقة الأناقة ومباشرة بلمحة بصر.
+                    </p>
+                    <!-- Attempts Counter -->
+                    <div class="inline-flex items-center gap-2 bg-white/80 border border-slate-200/80 rounded-full px-5 py-2 shadow-sm backdrop-blur-md">
+                        <span class="text-sm font-semibold text-slate-500">المحاولات المجانية المتبقية اليوم:</span>
+                        <span id="attempts-count" class="text-lg font-black text-brand-600">30</span>
+                    </div>
+                </div>
+
+                <!-- Input Generator Pearl Card -->
+                <div class="max-w-2xl mx-auto">
+                    <div class="pearl-card rounded-3xl p-8 md:p-10 shadow-2xl">
+                        <!-- Mode Selector Tabs -->
+                        <div class="bg-slate-100/80 p-1.5 rounded-2xl flex mb-8 border border-slate-200/30">
+                            <button type="button" onclick="setMode('random')" id="tab-random" class="w-1/2 py-3.5 text-sm font-bold rounded-xl shadow-sm bg-white text-brand-700 transition-all duration-300">
+                                ⚡ رابط سريع (wa.me)
+                            </button>
+                            <button type="button" onclick="setMode('custom')" id="tab-custom" class="w-1/2 py-3.5 text-sm font-bold rounded-xl text-slate-500 hover:text-slate-700 transition-all duration-300">
+                                🏷️ رابط مخصص (go.com.ly)
+                            </button>
+                        </div>
+
+                        <form id="generator-form" onsubmit="handleGenerate(event)" class="space-y-6">
+                            <!-- Store Name (Custom Mode only) -->
+                            <div id="store-input-group" class="hidden space-y-2">
+                                <label class="block text-sm font-bold text-slate-700">اسم الرابط المخصص (بالإنجليزي)</label>
+                                <div class="bg-slate-50/80 border border-slate-200 rounded-2xl flex items-center px-4 py-4 focus-within:ring-2 focus-within:ring-brand-500/20 focus-within:border-brand-500 transition-all">
+                                    <span class="text-slate-400 font-semibold select-none dir-ltr text-sm whitespace-nowrap">go.com.ly/</span>
+                                    <input type="text" id="store-name" pattern="[a-zA-Z0-9\-_]+" title="أحرف إنجليزية وأرقام وشرطات فقط" 
+                                        class="bg-transparent border-none focus:ring-0 w-full text-slate-900 font-bold placeholder-slate-400 outline-none pr-1" 
+                                        placeholder="اسم-متجرك" oninput="updateLinkPreview()">
+                                </div>
+                                <p class="text-xs text-slate-400">مثال للرابط: <span id="link-preview-text" class="font-bold text-brand-600 dir-ltr">go.com.ly/اسم-متجرك</span></p>
+                            </div>
+
+                            <!-- Phone Input Group -->
+                            <div class="space-y-2">
+                                <label class="block text-sm font-bold text-slate-700">رقم الواتساب</label>
+                                <div class="flex gap-3">
+                                    <!-- Country Dropdown -->
+                                    <div class="relative w-1/3">
+                                        <select id="country-code" class="w-full appearance-none bg-slate-50 border border-slate-200 text-slate-900 font-bold rounded-2xl py-4 px-4 focus:outline-none focus:ring-2 focus:ring-brand-500/20 focus:border-brand-500">
+                                            <option value="218">🇱🇾 +218</option>
+                                            <option value="966">🇸🇦 +966</option>
+                                            <option value="20">🇪🇬 +20</option>
+                                            <option value="971">🇦🇪 +971</option>
+                                            <option value="965">🇰🇼 +965</option>
+                                        </select>
+                                        <div class="pointer-events-none absolute inset-y-0 left-3 flex items-center text-slate-500">
+                                            ▼
+                                        </div>
+                                    </div>
+                                    <!-- Number Input -->
+                                    <div class="w-2/3 bg-slate-50 border border-slate-200 rounded-2xl flex items-center px-4 py-4 focus-within:ring-2 focus-within:ring-brand-500/20 focus-within:border-brand-500 transition-all">
+                                        <input type="tel" id="phone-number" required 
+                                            class="bg-transparent border-none focus:ring-0 w-full text-slate-900 font-bold placeholder-slate-400 outline-none text-left" 
+                                            placeholder="912345678">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Custom Message -->
+                            <div class="space-y-2">
+                                <label class="block text-sm font-bold text-slate-700">الرسالة الترحيبية التلقائية</label>
+                                <textarea id="message" rows="3" 
+                                    class="block w-full bg-slate-50 border border-slate-200 rounded-2xl p-4 text-slate-900 placeholder-slate-400 focus:ring-2 focus:ring-brand-500/20 focus:border-brand-500 outline-none resize-none" 
+                                    placeholder="مرحباً! أود الاستفسار عن خدماتكم..."></textarea>
+                            </div>
+
+                            <!-- Action Button -->
+                            <button type="submit" id="generate-btn" class="w-full bg-gradient-to-r from-brand-600 to-brand-700 hover:from-brand-700 hover:to-brand-800 text-white font-extrabold py-4 px-6 rounded-2xl shadow-xl shadow-brand-500/20 transform transition-all hover:-translate-y-1 active:scale-95 flex items-center justify-center gap-2 text-lg">
+                                <span id="btn-text">توليد الرابط الذكي</span>
+                                <span id="btn-spinner" class="animate-spin h-5 w-5 border-2 border-white border-t-transparent rounded-full hidden"></span>
+                            </button>
+                        </form>
+
+                        <!-- Expired State Box -->
+                        <div id="expired-state" class="hidden flex-col items-center text-center space-y-6 py-6">
+                            <div class="w-20 h-20 bg-red-50 rounded-full flex items-center justify-center">
+                                ❌
+                            </div>
+                            <h3 class="text-2xl font-bold text-slate-950">انتهت المحاولات المجانية</h3>
+                            <p class="text-slate-600">لقد استهلكت الـ 30 محاولة المتاحة لك اليوم. للترقية والحصول على عدد لا نهائي:</p>
+                            <a href="https://wa.me/218944119965" target="_blank" class="w-full bg-slate-950 text-white font-bold py-4 px-6 rounded-2xl shadow-lg hover:bg-slate-800 transition-colors flex items-center justify-center gap-2">
+                                تواصل مع الدعم الفني للترقية
+                            </a>
+                        </div>
+
+                        <!-- Result Container -->
+                        <div id="result-container" class="hidden mt-8 pt-8 border-t border-slate-200/60">
+                            <div class="bg-brand-50/50 border border-brand-100 rounded-2xl p-5 mb-6">
+                                <label class="block text-xs font-bold text-brand-700 mb-2 uppercase tracking-wider">الرابط الخاص بك جاهز</label>
+                                <div class="flex items-center justify-between gap-3">
+                                    <a id="final-link-display" href="#" target="_blank" class="text-lg font-bold text-slate-800 truncate hover:text-brand-600 transition-colors"></a>
+                                    <button onclick="copyLink()" class="p-2.5 hover:bg-white rounded-xl transition-colors text-brand-700 border border-transparent hover:border-brand-200" title="نسخ الرابط">
+                                        📋
+                                    </button>
+                                </div>
+                            </div>
+
+                            <div class="grid grid-cols-1 gap-3 mb-6">
+                                <a id="direct-open-btn" href="#" target="_blank" class="w-full bg-brand-600 hover:bg-brand-700 text-white font-bold py-3.5 px-4 rounded-2xl text-center shadow-md transition-colors flex items-center justify-center gap-2">
+                                    <span>فتح في واتساب مباشرة 🚀</span>
+                                </a>
+                            </div>
+
+                            <!-- QR Code Visualiser -->
+                            <div class="flex flex-col items-center justify-center">
+                                <div class="bg-white p-4 rounded-2xl shadow-inner border border-slate-100 mb-3">
+                                    <canvas id="qr-canvas"></canvas>
+                                </div>
+                                <span class="text-sm text-slate-500 font-semibold">امسح الكود لتجربة الرابط</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Component 2: Overlapping Isometric Mockup Section -->
+        <section class="py-24 bg-white/40 border-y border-slate-200/50 relative overflow-hidden">
+            <!-- Geometric Pearl circle anchors behind device mockups -->
+            <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-gradient-to-tr from-purple-100/40 via-emerald-100/30 to-blue-100/40 rounded-full blur-3xl pointer-events-none"></div>
+
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+                <div class="text-center max-w-3xl mx-auto mb-16">
+                    <h2 class="text-3xl md:text-5xl font-black text-slate-900 mb-6">واجهة مستخدم تفاعلية فائقة الأناقة</h2>
+                    <p class="text-slate-600">شاهد كيف تبدو روابطك المخصصة على هواتف عملائك بأسلوب عرض ثلاثي الأبعاد.</p>
+                </div>
+
+                <div class="isometric-container flex flex-col md:flex-row items-center justify-center gap-12 lg:gap-24">
+                    <!-- Isometric Mockup Left -->
+                    <div class="isometric-device-left w-72 h-[500px] bg-slate-950 rounded-[40px] p-3 shadow-2xl border-4 border-slate-800 flex flex-col justify-between relative overflow-hidden">
+                        <div class="absolute top-4 left-1/2 -translate-x-1/2 w-24 h-5 bg-black rounded-full z-20"></div>
+                        <div class="h-full w-full bg-slate-900 rounded-[32px] overflow-hidden p-4 pt-10 flex flex-col justify-between">
+                            <div class="flex items-center gap-3 border-b border-slate-800 pb-3">
+                                <div class="w-8 h-8 rounded-full bg-brand-500 flex items-center justify-center text-white text-xs">💬</div>
+                                <div>
+                                    <h4 class="text-xs font-bold text-white">go.com.ly/sales</h4>
+                                    <span class="text-[9px] text-slate-400">متصل الآن</span>
+                                </div>
+                            </div>
+                            <div class="flex-grow flex items-end justify-start pb-4">
+                                <div class="bg-slate-800 text-slate-200 text-xs p-3 rounded-2xl max-w-[85%] rounded-bl-none">
+                                    مرحباً! أود الاستفسار عن كود الخصم المتوفر للمنتجات؟
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Isometric Mockup Right -->
+                    <div class="isometric-device-right w-72 h-[500px] bg-slate-950 rounded-[40px] p-3 shadow-2xl border-4 border-slate-800 flex flex-col justify-between relative overflow-hidden">
+                        <div class="absolute top-4 left-1/2 -translate-x-1/2 w-24 h-5 bg-black rounded-full z-20"></div>
+                        <div class="h-full w-full bg-slate-900 rounded-[32px] overflow-hidden p-4 pt-10 flex flex-col justify-between">
+                            <div class="flex items-center gap-3 border-b border-slate-800 pb-3">
+                                <div class="w-8 h-8 rounded-full bg-brand-500 flex items-center justify-center text-white text-xs">📦</div>
+                                <div>
+                                    <h4 class="text-xs font-bold text-white">go.com.ly/order</h4>
+                                    <span class="text-[9px] text-slate-400">متصل الآن</span>
+                                </div>
+                            </div>
+                            <div class="flex-grow flex items-end justify-start pb-4">
+                                <div class="bg-brand-900/40 border border-brand-500/20 text-brand-100 text-xs p-3 rounded-2xl max-w-[85%] rounded-bl-none">
+                                    مرحباً، أود تأكيد طلبي وشحن الشحنة إلى طرابلس اليوم.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Component 3: Alternating Feature Rows -->
+        <section class="py-24 space-y-32">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                
+                <!-- Row A: Right-aligned Typography + Left-aligned Minimalist Wireframe -->
+                <div class="flex flex-col lg:flex-row items-center gap-16">
+                    <div class="w-full lg:w-1/2 space-y-6">
+                        <h3 class="text-3xl md:text-4xl font-black text-slate-950">بنية تحتية آمنة وموثوقة بنسبة 100%</h3>
+                        <p class="text-slate-600 leading-relaxed">
+                            نحن نستخدم أحدث خوادم الحوسبة السحابية لضمان تحويل روابط عملائك على الفور بدون أي تأخير. جميع البيانات مشفرة بالكامل لحماية خصوصية اتصالاتك.
+                        </p>
+                        <ul class="space-y-3 text-slate-700 font-semibold">
+                            <li class="flex items-center gap-2 text-brand-600">✓ حماية ضد الهجمات السيبرانية</li>
+                            <li class="flex items-center gap-2 text-brand-600">✓ سرعة استجابة فائقة بمتوسط 12ms</li>
+                            <li class="flex items-center gap-2 text-brand-600">✓ متوافق تماماً مع معايير الأمان العالمية</li>
+                        </ul>
+                    </div>
+                    <div class="w-full lg:w-1/2 flex justify-center relative">
+                        <!-- High-tech radial background vector lines -->
+                        <div class="absolute inset-0 flex items-center justify-center opacity-20">
+                            <svg width="400" height="400" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <circle cx="50" cy="50" r="40" stroke="currentColor" stroke-width="0.5" stroke-dasharray="2 2"/>
+                                <circle cx="50" cy="50" r="30" stroke="currentColor" stroke-width="0.5"/>
+                                <circle cx="50" cy="50" r="20" stroke="currentColor" stroke-width="0.5" stroke-dasharray="4 4"/>
+                            </svg>
+                        </div>
+                        <!-- Minimalist Wireframe Device Outline -->
+                        <div class="w-64 h-[450px] border-2 border-slate-300 rounded-[32px] p-2 bg-white/50 backdrop-blur-sm z-10 flex flex-col justify-between">
+                            <div class="w-1/2 h-4 bg-slate-200 rounded-full mx-auto mt-2"></div>
+                            <div class="flex-grow flex items-center justify-center">
+                                <div class="w-16 h-16 rounded-full bg-brand-100 flex items-center justify-center text-brand-600 text-2xl font-bold animate-pulse-subtle">
+                                    🔒
+                                </div>
+                            </div>
+                            <div class="w-12 h-1.5 bg-slate-200 rounded-full mx-auto mb-2"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Row B: Left-aligned Typography + Right-aligned Charts -->
+                <div class="flex flex-col lg:flex-row-reverse items-center gap-16">
+                    <div class="w-full lg:w-1/2 space-y-6">
+                        <h3 class="text-3xl md:text-4xl font-black text-slate-950">إحصائيات متقدمة ومراقبة مستمرة لنشاطك</h3>
+                        <p class="text-slate-600 leading-relaxed">
+                            تتبع عدد النقرات على روابطك المختصرة في الوقت الفعلي. تعرّف على مصادر زيارات عملائك وحسّن استراتيجيات التسويق الخاصة بك لزيادة المبيعات بشكل فعّال.
+                        </p>
+                        <ul class="space-y-3 text-slate-700 font-semibold">
+                            <li class="flex items-center gap-2 text-brand-600">✓ تحليلات جغرافية دقيقة</li>
+                            <li class="flex items-center gap-2 text-brand-600">✓ رصد مباشر لمعدل التحويل</li>
+                            <li class="flex items-center gap-2 text-brand-600">✓ تقارير أسبوعية وشهرية مخصصة</li>
+                        </ul>
+                    </div>
+                    <div class="w-full lg:w-1/2 flex justify-center">
+                        <!-- Stacked circular interface previews with detailed SVG charts -->
+                        <div class="relative w-72 h-72 flex items-center justify-center">
+                            <div class="absolute w-56 h-56 bg-white rounded-full shadow-xl border border-slate-100 p-6 flex flex-col justify-between z-20">
+                                <span class="text-xs font-bold text-slate-400">إجمالي النقرات</span>
+                                <span class="text-3xl font-black text-slate-950">42,912</span>
+                                <!-- SVG Chart Sparkline -->
+                                <svg class="w-full h-12 text-brand-500" viewBox="0 0 100 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M0 25C10 20 20 5 30 15C40 25 50 10 60 8C70 6 80 20 90 2C100 -16 100 30 100 30H0V25Z" fill="url(#chart-grad)" opacity="0.2"/>
+                                    <path d="M0 25C10 20 20 5 30 15C40 25 50 10 60 8C70 6 80 20 90 2" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                                    <defs>
+                                        <linearGradient id="chart-grad" x1="0" y1="0" x2="0" y2="1">
+                                            <stop offset="0%" stop-color="currentColor"/>
+                                            <stop offset="100%" stop-color="white" stop-opacity="0"/>
+                                        </linearGradient>
+                                    </defs>
+                                </svg>
+                            </div>
+                            <div class="absolute w-44 h-44 bg-slate-900 rounded-full shadow-2xl p-6 flex flex-col justify-between -bottom-6 -right-6 z-10 text-white">
+                                <span class="text-[10px] font-bold text-slate-400">معدل التحويل</span>
+                                <span class="text-2xl font-black text-brand-400">18.4%</span>
+                                <div class="w-full bg-slate-800 h-1.5 rounded-full overflow-hidden">
+                                    <div class="bg-brand-500 h-full w-[65%]"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Component 4: Premium Asset Matrix (Market Grid) -->
+        <section class="py-24 bg-slate-50 border-t border-slate-200/50">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center max-w-3xl mx-auto mb-16">
+                    <h2 class="text-3xl md:text-5xl font-black text-slate-950 mb-6">أمثلة لروابط ذكية ناجحة</h2>
+                    <p class="text-slate-600">انضم إلى آلاف المستخدمين الذين يثقون في منصتنا لإدارة وتوجيه اتصالاتهم.</p>
+                </div>
+
+                <!-- 4-Column Card Grid -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                    
+                    <!-- Card 1 -->
+                    <div class="bg-white rounded-2xl p-6 border border-slate-200/60 shadow-sm flex flex-col justify-between">
+                        <div class="flex items-center gap-3 mb-4">
+                            <div class="w-10 h-10 bg-brand-50 rounded-xl flex items-center justify-center text-brand-600 text-lg font-bold">🛒</div>
+                            <div>
+                                <h4 class="font-bold text-slate-950 text-sm">go.com.ly/sales</h4>
+                                <span class="text-xs text-slate-400">قسم المبيعات</span>
+                            </div>
+                        </div>
+                        <div class="mb-4">
+                            <span class="text-xs text-slate-400 block">إجمالي الزيارات</span>
+                            <span class="text-xl font-bold text-slate-950">14,204</span>
+                        </div>
+                        <!-- Sparkline SVG -->
+                        <svg class="w-full h-8 text-brand-500 mb-4" viewBox="0 0 100 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M0 15C20 5 40 18 60 8C80 -2 90 12 100 2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                        </svg>
+                        <button onclick="setMode('custom')" class="w-full py-2 bg-slate-50 hover:bg-brand-50 text-slate-700 hover:text-brand-700 text-xs font-bold rounded-lg transition-colors">احجز مثله الآن</button>
+                    </div>
+
+                    <!-- Card 2 -->
+                    <div class="bg-white rounded-2xl p-6 border border-slate-200/60 shadow-sm flex flex-col justify-between">
+                        <div class="flex items-center gap-3 mb-4">
+                            <div class="w-10 h-10 bg-brand-50 rounded-xl flex items-center justify-center text-brand-600 text-lg font-bold">🛠️</div>
+                            <div>
+                                <h4 class="font-bold text-slate-950 text-sm">go.com.ly/support</h4>
+                                <span class="text-xs text-slate-400">الدعم الفني</span>
+                            </div>
+                        </div>
+                        <div class="mb-4">
+                            <span class="text-xs text-slate-400 block">إجمالي الزيارات</span>
+                            <span class="text-xl font-bold text-slate-950">9,812</span>
+                        </div>
+                        <!-- Sparkline SVG -->
+                        <svg class="w-full h-8 text-brand-500 mb-4" viewBox="0 0 100 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M0 5C20 18 40 2 60 12C80 22 90 5 100 15" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                        </svg>
+                        <button onclick="setMode('custom')" class="w-full py-2 bg-slate-50 hover:bg-brand-50 text-slate-700 hover:text-brand-700 text-xs font-bold rounded-lg transition-colors">احجز مثله الآن</button>
+                    </div>
+
+                    <!-- Card 3 -->
+                    <div class="bg-white rounded-2xl p-6 border border-slate-200/60 shadow-sm flex flex-col justify-between">
+                        <div class="flex items-center gap-3 mb-4">
+                            <div class="w-10 h-10 bg-brand-50 rounded-xl flex items-center justify-center text-brand-600 text-lg font-bold">🎁</div>
+                            <div>
+                                <h4 class="font-bold text-slate-950 text-sm">go.com.ly/offer</h4>
+                                <span class="text-xs text-slate-400">العروض الحصرية</span>
+                            </div>
+                        </div>
+                        <div class="mb-4">
+                            <span class="text-xs text-slate-400 block">إجمالي الزيارات</span>
+                            <span class="text-xl font-bold text-slate-950">22,490</span>
+                        </div>
+                        <!-- Sparkline SVG -->
+                        <svg class="w-full h-8 text-brand-500 mb-4" viewBox="0 0 100 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M0 18C20 18 40 2 60 2C80 2 90 15 100 8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                        </svg>
+                        <button onclick="setMode('custom')" class="w-full py-2 bg-slate-50 hover:bg-brand-50 text-slate-700 hover:text-brand-700 text-xs font-bold rounded-lg transition-colors">احجز مثله الآن</button>
+                    </div>
+
+                    <!-- Card 4 -->
+                    <div class="bg-white rounded-2xl p-6 border border-slate-200/60 shadow-sm flex flex-col justify-between">
+                        <div class="flex items-center gap-3 mb-4">
+                            <div class="w-10 h-10 bg-brand-50 rounded-xl flex items-center justify-center text-brand-600 text-lg font-bold">📅</div>
+                            <div>
+                                <h4 class="font-bold text-slate-950 text-sm">go.com.ly/booking</h4>
+                                <span class="text-xs text-slate-400">الحجوزات</span>
+                            </div>
+                        </div>
+                        <div class="mb-4">
+                            <span class="text-xs text-slate-400 block">إجمالي الزيارات</span>
+                            <span class="text-xl font-bold text-slate-950">6,110</span>
+                        </div>
+                        <!-- Sparkline SVG -->
+                        <svg class="w-full h-8 text-brand-500 mb-4" viewBox="0 0 100 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M0 10C20 12 40 15 60 5C80 -5 90 18 100 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                        </svg>
+                        <button onclick="setMode('custom')" class="w-full py-2 bg-slate-50 hover:bg-brand-50 text-slate-700 hover:text-brand-700 text-xs font-bold rounded-lg transition-colors">احجز مثله الآن</button>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Component 5: 3D Product Showcase Divider -->
+        <section class="py-20 relative overflow-hidden bg-slate-950 text-white">
+            <div class="absolute inset-0 bg-gradient-to-r from-brand-900/20 via-transparent to-purple-900/20 opacity-50"></div>
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 flex flex-col lg:flex-row items-center justify-between gap-12">
+                <div class="space-y-6 max-w-2xl">
+                    <span class="text-brand-400 font-extrabold text-sm uppercase tracking-wider">بطاقة التفعيل الاحترافية</span>
+                    <h2 class="text-3xl md:text-5xl font-black leading-tight">امتلك هويتك الرقمية الكاملة اليوم</h2>
+                    <p class="text-slate-400">
+                        احصل على بطاقة التفعيل الحصرية لتتمتع بمميزات النسخة الاحترافية مدى الحياة وبدون أي اشتراكات شهرية متكررة.
+                    </p>
+                    <button onclick="openModal('pro-modal')" class="bg-white hover:bg-slate-100 text-slate-950 font-extrabold px-8 py-3.5 rounded-2xl shadow-lg transition-all transform hover:-translate-y-0.5">
+                        احصل على بطاقتك الآن
+                    </button>
+                </div>
+                <!-- 3D Pearlescent/Metallic Card Mockup -->
+                <div class="relative w-80 h-52 bg-gradient-to-tr from-slate-800 via-slate-900 to-slate-950 rounded-2xl p-6 shadow-2xl border border-slate-700/50 flex flex-col justify-between transform rotate-12 hover:rotate-6 transition-transform duration-500">
+                    <div class="flex justify-between items-start">
+                        <span class="text-xs font-bold text-slate-400">go.com.ly Pro</span>
+                        <span class="text-2xl">⚡</span>
+                    </div>
+                    <div class="space-y-1">
+                        <span class="text-xs text-slate-500 block">رقم البطاقة</span>
+                        <span class="text-lg font-mono tracking-widest text-slate-200">**** **** **** 2024</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Component 6: Conversional Call-To-Action (CTA) -->
+        <section class="py-24 relative overflow-hidden">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
+                <div class="pearl-card rounded-3xl p-10 md:p-16 shadow-2xl space-y-8">
+                    <h2 class="text-3xl md:text-5xl font-black text-slate-950">انضم إلى مجتمعنا الاحترافي</h2>
+                    <p class="text-slate-600 max-w-xl mx-auto">
+                        اشترك في قائمتنا البريدية للحصول على أحدث النصائح والأدوات لزيادة مبيعاتك عبر الواتساب مجاناً.
+                    </p>
+                    <form onsubmit="handleSubscribe(event)" class="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
+                        <input type="email" id="subscriber-email" required placeholder="بريدك الإلكتروني" class="w-full bg-slate-50 border border-slate-200 rounded-2xl px-5 py-4 text-slate-900 focus:ring-2 focus:ring-brand-500/20 focus:border-brand-500 outline-none">
+                        <button type="submit" class="bg-slate-950 hover:bg-slate-800 text-white font-extrabold px-8 py-4 rounded-2xl whitespace-nowrap transition-colors">اشترك الآن</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Component 7: Deep Corporate Footer -->
+    <footer class="bg-slate-950 text-slate-400 py-16 border-t border-slate-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
+                <!-- Brand Info -->
+                <div class="space-y-4">
+                    <div class="flex items-center gap-3">
+                        <div class="w-8 h-8 bg-brand-600 rounded-lg flex items-center justify-center text-white font-bold">G</div>
+                        <span class="font-extrabold text-white text-lg">go.com.ly</span>
+                    </div>
+                    <p class="text-sm text-slate-500 leading-relaxed">
+                        المنصة الليبية الأولى والرائدة في تقصير وتخصيص روابط الواتساب الذكية لقطاع الأعمال والأفراد.
+                    </p>
+                </div>
+                <!-- Links Column 1 -->
+                <div>
+                    <h4 class="text-white font-bold mb-4 text-sm">المنصة</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><button onclick="openModal('about-modal')" class="hover:text-white transition-colors">من نحن</button></li>
+                        <li><button onclick="openModal('pro-modal')" class="hover:text-white transition-colors">النسخة الاحترافية</button></li>
+                        <li><button onclick="openModal('sitemap-modal')" class="hover:text-white transition-colors">خريطة الموقع</button></li>
+                    </ul>
+                </div>
+                <!-- Links Column 2 -->
+                <div>
+                    <h4 class="text-white font-bold mb-4 text-sm">القوانين</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><button onclick="openModal('privacy-modal')" class="hover:text-white transition-colors">سياسة الخصوصية</button></li>
+                        <li><button onclick="openModal('terms-modal')" class="hover:text-white transition-colors">شروط الاستخدام</button></li>
+                    </ul>
+                </div>
+                <!-- Links Column 3 -->
+                <div>
+                    <h4 class="text-white font-bold mb-4 text-sm">اتصل بنا</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="https://wa.me/218944119965" target="_blank" class="hover:text-white transition-colors">الدعم الفني المباشر</a></li>
+                        <li><span class="text-slate-500">طرابلس، ليبيا</span></li>
+                    </ul>
+                </div>
+            </div>
+            <!-- Footer Bottom -->
+            <div class="border-t border-slate-900 pt-8 flex flex-col sm:flex-row justify-between items-center gap-4 text-xs text-slate-600">
+                <span>&copy; <span id="year"></span> go.com.ly. جميع الحقوق محفوظة.</span>
+                <div class="flex gap-4">
+                    <a href="https://wa.me/218944119965" target="_blank" aria-label="واتساب">💬</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- MODALS SYSTEM -->
+
+    <!-- Modal Backdrop -->
+    <div id="modal-backdrop" class="fixed inset-0 bg-slate-950/40 backdrop-blur-sm z-[100] hidden transition-opacity duration-300 opacity-0" onclick="closeAllModals()"></div>
+
+    <!-- 1. Privacy Policy Modal -->
+    <div id="privacy-modal" class="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[90%] max-w-2xl bg-white rounded-3xl p-8 shadow-2xl z-[101] hidden transition-all duration-300 scale-95 max-h-[85vh] overflow-y-auto">
+        <div class="flex justify-between items-center mb-6 pb-4 border-b">
+            <h3 class="text-2xl font-black text-slate-950">سياسة الخصوصية</h3>
+            <button onclick="closeModal('privacy-modal')" class="text-slate-400 hover:text-slate-600 text-xl font-bold">✕</button>
+        </div>
+        <div class="space-y-4 text-slate-600 leading-relaxed text-sm">
+            <p>نحن في <strong>go.com.ly</strong> نلتزم التزاماً تاماً بحماية خصوصية بياناتك الشخصية وبيانات عملائك.</p>
+            <h4 class="font-bold text-slate-900">البيانات التي نجمعها:</h4>
+            <p>لا نقوم بتخزين أو مشاركة أرقام الهواتف أو محتوى الرسائل التي يتم إدخالها في أداة التوليد. يتم استخدام هذه البيانات حصرياً لتوليد الرابط بشكل فوري في متصفحك.</p>
+            <h4 class="font-bold text-slate-900">ملفات تعريف الارتباط:</h4>
+            <p>نستخدم ملفات تعريف الارتباط الأساسية لتذكر تفضيلاتك وعدد المحاولات المتبقية لضمان عمل المنصة بشكل سليم وسريع.</p>
+        </div>
+    </div>
+
+    <!-- 2. About Us Modal -->
+    <div id="about-modal" class="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[90%] max-w-2xl bg-white rounded-3xl p-8 shadow-2xl z-[101] hidden transition-all duration-300 scale-95 max-h-[85vh] overflow-y-auto">
+        <div class="flex justify-between items-center mb-6 pb-4 border-b">
+            <h3 class="text-2xl font-black text-slate-950">من نحن</h3>
+            <button onclick="closeModal('about-modal')" class="text-slate-400 hover:text-slate-600 text-xl font-bold">✕</button>
+        </div>
+        <div class="space-y-4 text-slate-600 leading-relaxed text-sm">
+            <p>منصة <strong>go.com.ly</strong> هي مبادرة تقنية ليبية تهدف إلى تمكين أصحاب المشاريع والشركات الناشئة من تسهيل قنوات التواصل المباشر مع عملائهم.</p>
+            <p>نحن نؤمن بأن تبسيط تجربة العميل تبدأ من طريقة وصوله إليك، لذلك قمنا بتطوير هذه الأداة الفائقة لتكون سريعة، آمنة، ومجانية بالكامل للجميع.</p>
+        </div>
+    </div>
+
+    <!-- 3. Terms of Use Modal -->
+    <div id="terms-modal" class="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[90%] max-w-2xl bg-white rounded-3xl p-8 shadow-2xl z-[101] hidden transition-all duration-300 scale-95 max-h-[85vh] overflow-y-auto">
+        <div class="flex justify-between items-center mb-6 pb-4 border-b">
+            <h3 class="text-2xl font-black text-slate-950">شروط الاستخدام</h3>
+            <button onclick="closeModal('terms-modal')" class="text-slate-400 hover:text-slate-600 text-xl font-bold">✕</button>
+        </div>
+        <div class="space-y-4 text-slate-600 leading-relaxed text-sm">
+            <p>باستخدامك لمنصة <strong>go.com.ly</strong>، فإنك توافق التام على الشروط التالية:</p>
+            <h4 class="font-bold text-slate-900">الاستخدام العادل:</h4>
+            <p>يُسمح باستخدام الأداة للأغراض التجارية والشخصية المشروعة. يُمنع منعاً باتاً استخدام المنصة في توليد روابط غير مرغوب فيها (Spam) أو روابط احتيالية.</p>
+            <h4 class="font-bold text-slate-900">إخلاء المسؤولية:</h4>
+            <p>المنصة غير مسؤولة عن أي خلافات تجارية أو سوء تفاهم ينتج بين أصحاب الروابط وعملائهم.</p>
+        </div>
+    </div>
+
+    <!-- 4. Pro Modal -->
+    <div id="pro-modal" class="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[90%] max-w-md bg-white rounded-3xl p-8 shadow-2xl z-[101] hidden transition-all duration-300 scale-95 max-h-[85vh] overflow-y-auto">
+        <div class="flex justify-between items-center mb-6 pb-4 border-b">
+            <h3 class="text-2xl font-black text-slate-950">النسخة الاحترافية ✨</h3>
+            <button onclick="closeModal('pro-modal')" class="text-slate-400 hover:text-slate-600 text-xl font-bold">✕</button>
+        </div>
+        <div class="space-y-6 text-center">
+            <p class="text-slate-600 text-sm">
+                احصل على مميزات حصرية تشمل روابط مخصصة غير محدودة، إحصائيات متقدمة، ودعم فني مخصص على مدار الساعة.
+            </p>
+            <a href="https://wa.me/218944119965" target="_blank" class="w-full bg-brand-600 hover:bg-brand-700 text-white font-extrabold py-3.5 px-4 rounded-2xl text-center shadow-md transition-colors flex items-center justify-center gap-2">
+                تواصل معنا للتفعيل المباشر
+            </a>
+        </div>
+    </div>
+
+    <!-- 5. Sitemap Modal -->
+    <div id="sitemap-modal" class="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[90%] max-w-lg bg-white rounded-3xl p-8 shadow-2xl z-[101] hidden transition-all duration-300 scale-95 max-h-[85vh] overflow-y-auto">
+        <div class="flex justify-between items-center mb-6 pb-4 border-b">
+            <h3 class="text-2xl font-black text-slate-950">خريطة الموقع</h3>
+            <button onclick="closeModal('sitemap-modal')" class="text-slate-400 hover:text-slate-600 text-xl font-bold">✕</button>
+        </div>
+        <div class="grid grid-cols-2 gap-4 text-sm font-bold text-slate-700">
+            <button onclick="closeModal('sitemap-modal'); openModal('about-modal')" class="p-3 bg-slate-50 rounded-xl hover:bg-brand-50 hover:text-brand-700 text-right">من نحن ➔</button>
+            <button onclick="closeModal('sitemap-modal'); openModal('privacy-modal')" class="p-3 bg-slate-50 rounded-xl hover:bg-brand-50 hover:text-brand-700 text-right">سياسة الخصوصية ➔</button>
+            <button onclick="closeModal('sitemap-modal'); openModal('terms-modal')" class="p-3 bg-slate-50 rounded-xl hover:bg-brand-50 hover:text-brand-700 text-right">شروط الاستخدام ➔</button>
+            <button onclick="closeModal('sitemap-modal'); openModal('pro-modal')" class="p-3 bg-slate-50 rounded-xl hover:bg-brand-50 hover:text-brand-700 text-right">النسخة الاحترافية ➔</button>
+        </div>
+    </div>
+
+
+    <!-- PWA Install Prompt (Pearl Floating Prompt) -->
+    <div id="pwa-install-prompt" class="fixed bottom-6 left-6 z-[90] max-w-sm bg-white/90 backdrop-blur-xl border border-slate-200/80 p-5 rounded-3xl shadow-2xl hidden flex-col gap-4 transform translate-y-10 opacity-0 transition-all duration-500">
+        <div class="flex items-center gap-3">
+            <div class="w-12 h-12 bg-brand-600 rounded-2xl flex items-center justify-center text-white text-xl shadow-lg shadow-brand-500/20">
+                📲
+            </div>
+            <div>
+                <h4 class="font-extrabold text-slate-950 text-sm">تثبيت تطبيق go.com.ly</h4>
+                <p class="text-xs text-slate-500">تصفح أسرع وأسهل مباشرة من شاشتك الرئيسية</p>
+            </div>
+        </div>
+        <div class="flex gap-2">
+            <button id="pwa-btn-install" class="flex-1 py-2.5 bg-brand-600 hover:bg-brand-700 text-white text-xs font-bold rounded-xl shadow-md transition-colors">تثبيت الآن</button>
+            <button id="pwa-btn-close" class="px-4 py-2.5 bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs font-bold rounded-xl transition-colors">لاحقاً</button>
+        </div>
+    </div>
+
+
+    <!-- CORE BUSINESS LOGIC SCRIPTS -->
+    <script>
+        // Configuration
+        const BASE_DOMAIN = 'go.com.ly';
+        const WORKER_URL = 'https://go-engine.safealigoog.workers.dev/';
+        const MAX_ATTEMPTS = 30;
+
+        // Attempts State Management
+        let attemptsLeft = parseInt(localStorage.getItem('go_attempts_v2')) ?? MAX_ATTEMPTS;
+        if (isNaN(attemptsLeft)) {
+            attemptsLeft = MAX_ATTEMPTS;
+            localStorage.setItem('go_attempts_v2', MAX_ATTEMPTS);
+        }
+
+        // DOM Elements
+        const attemptsDisplay = document.getElementById('attempts-count');
+        const generatorForm = document.getElementById('generator-form');
+        const expiredState = document.getElementById('expired-state');
+        const resultContainer = document.getElementById('result-container');
+        const generateBtn = document.getElementById('generate-btn');
+        const btnText = document.getElementById('btn-text');
+        const btnSpinner = document.getElementById('btn-spinner');
+
+        function updateAttemptsUI() {
+            if (attemptsDisplay) {
+                attemptsDisplay.innerText = attemptsLeft;
+            }
+            if (attemptsLeft <= 0) {
+                generatorForm.classList.add('hidden');
+                expiredState.classList.remove('hidden');
+                expiredState.classList.add('flex');
+            }
+        }
+        updateAttemptsUI();
+
+        // Mode Management
+        let currentMode = 'random';
+
+        function setMode(mode) {
+            currentMode = mode;
+            const tabRandom = document.getElementById('tab-random');
+            const tabCustom = document.getElementById('tab-custom');
+            const storeInputGroup = document.getElementById('store-input-group');
+            const storeInput = document.getElementById('store-name');
+
+            const activeClasses = ['bg-white', 'text-brand-700', 'shadow-sm'];
+            const inactiveClasses = ['text-slate-500', 'hover:text-slate-700'];
+
+            if (mode === 'random') {
+                tabRandom.classList.add(...activeClasses);
+                tabRandom.classList.remove(...inactiveClasses);
+                tabCustom.classList.remove(...activeClasses);
+                tabCustom.classList.add(...inactiveClasses);
+
+                storeInputGroup.classList.add('hidden');
+                storeInput.required = false;
+                btnText.innerText = "توليد الرابط المباشر";
+            } else {
+                tabCustom.classList.add(...activeClasses);
+                tabCustom.classList.remove(...inactiveClasses);
+                tabRandom.classList.remove(...activeClasses);
+                tabRandom.classList.add(...inactiveClasses);
+
+                storeInputGroup.classList.remove('hidden');
+                storeInput.required = true;
+                btnText.innerText = "توليد الرابط الاحترافي";
+            }
+            resultContainer.classList.add('hidden');
+        }
+
+        function updateLinkPreview() {
+            const input = document.getElementById('store-name');
+            const preview = document.getElementById('link-preview-text');
+            input.value = input.value.replace(/[^a-zA-Z0-9\-_]/g, '');
+            preview.innerText = input.value ? `${BASE_DOMAIN}/${input.value}` : `${BASE_DOMAIN}/اسم-متجرك`;
+        }
+
+        // Toast Notifications
+        function showToast(message, type = 'success') {
+            const container = document.getElementById('toast-container');
+            const toast = document.createElement('div');
+            
+            const bgClass = type === 'success' ? 'bg-slate-900 border-slate-800' : 'bg-red-600 border-red-500';
+            const icon = type === 'success' ? '✅' : '❌';
+
+            toast.className = `px-6 py-3.5 rounded-2xl shadow-2xl border text-white text-sm font-bold flex items-center gap-3 transition-all duration-300 transform translate-y-2 opacity-0 ${bgClass}`;
+            toast.innerHTML = `<span>${icon}</span><span>${message}</span>`;
+
+            container.appendChild(toast);
+
+            // Trigger Animation
+            setTimeout(() => {
+                toast.classList.remove('translate-y-2', 'opacity-0');
+            }, 10);
+
+            // Auto Remove
+            setTimeout(() => {
+                toast.classList.add('translate-y-2', 'opacity-0');
+                setTimeout(() => toast.remove(), 300);
+            }, 3000);
+        }
+
+        // Form Submit Handler
+        async function handleGenerate(e) {
+            e.preventDefault();
+
+            if (attemptsLeft <= 0) return;
+
+            generateBtn.disabled = true;
+            btnSpinner.classList.remove('hidden');
+            btnText.innerText = "جاري المعالجة...";
+
+            const countryCode = document.getElementById('country-code').value;
+            let phoneNumber = document.getElementById('phone-number').value.trim();
+            const message = document.getElementById('message').value.trim();
+
+            phoneNumber = phoneNumber.replace(/\D/g, '');
+            if (phoneNumber.startsWith('0')) {
+                phoneNumber = phoneNumber.substring(1);
+            }
+
+            const fullPhone = countryCode + phoneNumber;
+            const whatsappUrl = `https://wa.me/${fullPhone}?text=${encodeURIComponent(message)}`;
+
+            let finalUrl = "";
+            let displayUrl = "";
+
+            try {
+                if (currentMode === 'random') {
+                    finalUrl = whatsappUrl;
+                    displayUrl = whatsappUrl;
+                    
+                    // Artificial Delay for premium feel
+                    await new Promise(r => setTimeout(r, 600));
+                    showResult(displayUrl, finalUrl);
+                    showToast("تم توليد الرابط السريع بنجاح!");
+                } else {
+                    const storeName = document.getElementById('store-name').value.trim();
+                    if (!storeName) {
+                        showToast("الرجاء كتابة الاسم المخصص أولاً", "error");
+                        resetBtn();
+                        return;
+                    }
+
+                    displayUrl = `${BASE_DOMAIN}/${storeName}`;
+                    finalUrl = `https://${displayUrl}`;
+
+                    const response = await fetch(WORKER_URL + 'save-link', {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({ slug: storeName, fullLink: whatsappUrl })
+                    });
+
+                    if (response.ok) {
+                        showResult(displayUrl, finalUrl);
+                        showToast("تم توليد الرابط المخصص بنجاح!");
+                    } else {
+                        throw new Error("Failed to save link on Worker");
+                    }
+                }
+
+                // Decrement Attempts
+                attemptsLeft--;
+                localStorage.setItem('go_attempts_v2', attemptsLeft);
+                updateAttemptsUI();
+
+            } catch (error) {
+                console.error(error);
+                showToast("حدث خطأ أثناء الاتصال بالخادم. الرجاء المحاولة مجدداً.", "error");
+            } finally {
+                resetBtn();
+            }
+        }
+
+        function showResult(displayUrl, finalUrl) {
+            const displayEl = document.getElementById('final-link-display');
+            const openBtn = document.getElementById('direct-open-btn');
+
+            displayEl.innerText = displayUrl;
+            displayEl.href = finalUrl;
+            openBtn.href = finalUrl;
+
+            resultContainer.classList.remove('hidden');
+
+            // Generate QR Code
+            new QRious({
+                element: document.getElementById('qr-canvas'),
+                value: finalUrl,
+                size: 160,
+                level: 'H',
+                foreground: '#0f172a',
+                background: '#ffffff'
+            });
+
+            resultContainer.scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function resetBtn() {
+            generateBtn.disabled = false;
+            btnSpinner.classList.add('hidden');
+            btnText.innerText = currentMode === 'random' ? "توليد الرابط المباشر" : "توليد الرابط الاحترافي";
+        }
+
+        function copyLink() {
+            const displayEl = document.getElementById('final-link-display');
+            navigator.clipboard.writeText(displayEl.href).then(() => {
+                showToast("تم نسخ الرابط بنجاح!");
+            });
+        }
+
+        function handleSubscribe(e) {
+            e.preventDefault();
+            const email = document.getElementById('subscriber-email').value;
+            showToast("شكرًا لاشتراكك في مجتمعنا! 💌");
+            document.getElementById('subscriber-email').value = "";
+        }
+
+        // Modal Handlers
+        const backdrop = document.getElementById('modal-backdrop');
+
+        function openModal(modalId) {
+            const modal = document.getElementById(modalId);
+            backdrop.classList.remove('hidden');
+            modal.classList.remove('hidden');
+            setTimeout(() => {
+                backdrop.classList.add('opacity-100');
+                modal.classList.remove('scale-95', 'opacity-0');
+            }, 10);
+        }
+
+        function closeModal(modalId) {
+            const modal = document.getElementById(modalId);
+            backdrop.classList.remove('opacity-100');
+            modal.classList.add('scale-95', 'opacity-0');
+            setTimeout(() => {
+                backdrop.classList.add('hidden');
+                modal.classList.add('hidden');
+            }, 300);
+        }
+
+        function closeAllModals() {
+            backdrop.classList.remove('opacity-100');
+            document.querySelectorAll('[id$="-modal"]').forEach(modal => {
+                modal.classList.add('scale-95', 'opacity-0');
+                setTimeout(() => modal.classList.add('hidden'), 300);
+            });
+            setTimeout(() => backdrop.classList.add('hidden'), 300);
+        }
+
+        // Set Copyright Year
+        document.getElementById('year').innerText = new Date().getFullYear();
+
+        // --- PWA INSTALLATION SYSTEM ---
+        let deferredPrompt;
+        const installPrompt = document.getElementById('pwa-install-prompt');
+        const btnInstall = document.getElementById('pwa-btn-install');
+        const btnClose = document.getElementById('pwa-btn-close');
+
+        window.addEventListener('beforeinstallprompt', (e) => {
+            e.preventDefault();
+            deferredPrompt = e;
+            
+            // Show custom install prompt with smooth slide-in
+            setTimeout(() => {
+                installPrompt.classList.remove('hidden');
+                setTimeout(() => {
+                    installPrompt.classList.remove('translate-y-10', 'opacity-0');
+                }, 50);
+            }, 5000);
+        });
+
+        btnInstall.addEventListener('click', async () => {
+            if (deferredPrompt) {
+                deferredPrompt.prompt();
+                const { outcome } = await deferredPrompt.userChoice;
+                if (outcome === 'accepted') {
+                    showToast("شكرًا لتثبيت التطبيق! 🎉");
+                }
+                deferredPrompt = null;
+                hideInstallPrompt();
+            }
+        });
+
+        btnClose.addEventListener('click', () => {
+            hideInstallPrompt();
+        });
+
+        function hideInstallPrompt() {
+            installPrompt.classList.add('translate-y-10', 'opacity-0');
+            setTimeout(() => installPrompt.classList.add('hidden'), 500);
+        }
+
+        // Service Worker Registration
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('/sw.js').then((reg) => {
+                    console.log('ServiceWorker registered successfully: ', reg.scope);
+                }, (err) => {
+                    console.log('ServiceWorker registration failed: ', err);
+                });
+            });
+        }
+    </script>
+
+<button id="install-btn" style="display:none;">تثبيت التطبيق</button>
+
+<script>
+  let deferredPrompt;
+  const installBtn = document.getElementById('install-btn');
+
+  window.addEventListener('beforeinstallprompt', (e) => {
+    e.preventDefault();
+    deferredPrompt = e;
+    installBtn.style.display = 'block';
+  });
+
+  installBtn.addEventListener('click', () => {
+    if (deferredPrompt) {
+      deferredPrompt.prompt();
+      deferredPrompt.userChoice.then((choiceResult) => {
+        deferredPrompt = null;
+      });
+    }
+  });
+</script>
+
+
+    
+</body>
+</html>
+
+
+>
 
     <!-- السكربت الموحد والنظيف -->
     <script>
